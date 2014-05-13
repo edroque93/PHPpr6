@@ -1,10 +1,10 @@
-drop table inscripciones;
-drop table usuarios;
-drop table actividades;
+drop table if exists inscripciones;
+drop table if exists usuarios;
+drop table if exists actividades;
 
 create table usuarios 
 (
-  id int autoincrement,
+  id int,
   identificador text not null,
   clave text not null,
   nombre text not null,
@@ -15,7 +15,7 @@ create table usuarios
 
 create table actividades
 (
-  id int autoincrement,
+  id int,
   fecha text not null,
   nombre text not null,
   descripcion text not null,
