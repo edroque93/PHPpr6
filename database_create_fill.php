@@ -4,12 +4,12 @@
             $db = new PDO("sqlite:./data.base");
             return($db);
         } catch (PDOException $e) {
-            print '<p>Error: '.$e->getMessage().'</p>';
+            print "<p>Error: ".$e->getMessage()."</p>";
         }
     }
     
     function addUser($acc, $passwd, $user, $mail, $type) {
-	    global $db;
+	global $db;
     	$db->exec("insert into usuarios(identificador, clave, nombre, email, tipo) 
     				values ( 
 			    		\"$acc\", 
@@ -21,7 +21,7 @@
     }
     
     function addActivity($date, $name, $details, $URL) {
-	    global $db;
+	global $db;
     	$db->exec("insert into actividades(fecha, nombre, descripcion, url) 
     				values ( 
 			    		\"$date\", 
@@ -32,7 +32,7 @@
     }
     
     function addInscription($activityID, $userID) {
-	    global $db;
+	global $db;
     	$db->exec("insert into inscripciones(actividad, usuario) 
     				values ( 
 			    		\"$activityID\", 
@@ -41,17 +41,17 @@
     }
     
     function getUserID($name) {
-		global $db;
+	global $db;
     	$result = $db->query("select id from usuarios where nombre=\"$name\"");
     	
-   		return($result->fetch()["id"]);
+	return($result->fetch()["id"]);
     }
     
     function getActivityID($name) {
-		global $db;
+	global $db;
     	$result = $db->query("select id from actividades where nombre=\"$name\"");
     	
-   		return($result->fetch()["id"]);
+	return($result->fetch()["id"]);
     }
 
     $db = getDB();
@@ -89,5 +89,5 @@
     addInscription(getActivityID("Aldea"), getUserID("Calvin"));
     addInscription(getActivityID("Bandama"), getUserID("Federico"));
     
-    print "Script completed";
+    print "<p>Script completed</p>";
 ?>
