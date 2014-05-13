@@ -1,3 +1,7 @@
+drop table inscripciones;
+drop table usuarios;
+drop table actividades;
+
 create table usuarios 
 (
   id int autoincrement,
@@ -7,7 +11,7 @@ create table usuarios
   email text not null,
   tipo int not null,
   constraint usuarios_pk primary key(id)
-)
+);
 
 create table actividades
 (
@@ -17,7 +21,7 @@ create table actividades
   descripcion text not null,
   url text not null,
   constraint actividades_pk primary key(id)
-)
+);
 
 create table inscripciones
 (
@@ -26,5 +30,5 @@ create table inscripciones
   constraint actividad_fk foreign key ( actividad )  references actividades(id),
   constraint usuario_fk foreign key ( usuario )  references usuarios(id),
   constraint inscripciones_pk primary key ( actividad, usuario )
-)
+);
 
