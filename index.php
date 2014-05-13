@@ -1,5 +1,3 @@
-<!-- Opera is so weird and fun http://[::1]:8000/ -->
-
 <?php
     function initDB() {
         try {
@@ -10,7 +8,7 @@
         }
     }
 
-    $db = initDB(); // ould not find driver....
+    $db = initDB();
     
     $db->exec("CREATE TABLE IF NOT EXISTS messages (
                     id INTEGER PRIMARY KEY, 
