@@ -4,23 +4,21 @@ drop table if exists actividades;
 
 create table usuarios 
 (
-  id int,
+  id integer primary key,
   identificador text not null,
   clave text not null,
   nombre text not null,
   email text not null,
-  tipo int not null,
-  constraint usuarios_pk primary key(id)
+  tipo int not null
 );
 
 create table actividades
 (
-  id int,
+  id integer primary key,
   fecha text not null,
   nombre text not null,
   descripcion text not null,
-  url text not null,
-  constraint actividades_pk primary key(id)
+  url text not null
 );
 
 create table inscripciones
