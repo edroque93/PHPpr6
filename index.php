@@ -1,20 +1,5 @@
 <?php
-    function initDB() {
-        try {
-            $db = new PDO("sqlite:./data.base");
-            return($db);
-        } catch (PDOException $e) {
-            print '<p>Error: '.$e->getMessage().'</p>';
-        }
-    }
-
-    $db = initDB();
-    
-    $db->exec("CREATE TABLE IF NOT EXISTS messages (
-                    id INTEGER PRIMARY KEY, 
-                    title TEXT, 
-                    message TEXT, 
-                    time INTEGER)");
+	// Something...
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +10,13 @@
         <title>Práctica 6 - PHP</title>
     </head>
     <body>
-        <h1>Práctica 6</h1>   
+    	<!-- Magic link -->
+    	
+        <a href="database_create_fill.php" target="_blank">Genera BD</a>
+        
+        <!-- Site -->
 
-         <!-- <?php phpinfo(); ?> -->
+        <h1>Práctica 6</h1>
+        <p>Lorem ipsum....</p>
     </body>
 </html>
