@@ -1,5 +1,7 @@
 <?php
 	// Something...
+	
+	$something = "Lorem ipsum... y tal.";
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +19,6 @@
         <!-- Site -->
 
         <h1>Práctica 6</h1>
-        <p>Lorem ipsum....</p>
+        <p><?php echo $something; ?></p>
     </body>
 </html>
