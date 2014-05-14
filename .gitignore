@@ -1,9 +1,8 @@
 *.swp
-
-ignore/
-
-data.base
-
+*.md
 *~
 
+data.base
 sqlitebrowser
+
+ignore/
