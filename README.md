@@ -1,5 +1,7 @@
-PHPpr6
+Práctica 6, PHP
 ======
+
+**Calvin & Enrique**
 
 Práctica de PR4 en PHP
 
