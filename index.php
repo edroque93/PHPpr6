@@ -2,6 +2,25 @@
 	// Something...
 	
 	$something = "Lorem ipsum... y tal.";
+	
+	/*
+	
+		TO-DO:
+		
+			- DB module (eg: include "db_mngmnt.php")
+			-- Care @lilbobbytables
+
+			- Site
+			-- Login block
+			--- User menu
+			--- Admin menu
+			-- Frontpage design
+			-- Routes (at least 3, see mockup)
+			-- About page
+			
+			- much research, so hard, wow php
+		
+	*/
 ?>
 
 <!DOCTYPE html>
