@@ -29,7 +29,19 @@ $js = <<<SCRIPT
 	var rows = document.querySelectorAll('tr');
 
 	var callback = function(ev){
-		console.log(ev.target.parentElement.id);
+		var form = document.createElement('form')
+		  , method = 'post'
+		  , path = 'usuario_form.php'
+		  , hiddenId = document.createElement('input');
+
+		form.setAttribute('method',method);
+		form.setAttribute('action',path);
+		hiddenId.setAttribute('type','hidden');
+		hiddenId.setAttribute('name','id');
+		hiddenId.setAttribute('value', ev.target.parentElement.id);
+		form.appendChild(hiddenId);
+		document.body.appendChild(form);
+		form.submit();
 	}
 
 	for( var i = 1; i < rows.length; i++ ){
