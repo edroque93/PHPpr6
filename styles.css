@@ -26,6 +26,13 @@ html {
 	text-shadow: 2px 2px 2px #999;
 }
 
+.menu {
+	background-color: #882277;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
 .menu ul li {
 	display: inline-block;
 	width: 200px;
@@ -44,19 +51,21 @@ html {
 	font-size: 40px;
 }
 
-.user_login {
-	border: 1px solid red;
+.loginregister table {
+	margin-left:auto; 
+    margin-right:auto;
+	text-align: center;
 }
 
-.user_login label {
+.loginregister fieldset {
+	height: 150px;
+}
+
+.loginregister label {
 	display: inline-block;
 	width: 90px;
 	padding-right: 5px;
 	text-align: right;
-}
-
-.registration {
-	border: 1px solid green;
 }
 
 #frontpage {
