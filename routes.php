@@ -5,9 +5,6 @@
 
 <?php
 
-include "test.php";
-
-
 echo '<p>Hola de vuelta</p>';
 
 ?>
