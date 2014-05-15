@@ -9,6 +9,7 @@
 			-- Care @lilbobbytables
 
 			- Site
+			-- Register block
 			-- Login block
 			--- User menu
 			--- Admin menu
