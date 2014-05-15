@@ -4,6 +4,19 @@ html {
     font-family: arial;
 }
 
+.footer	{
+	text-align: center;
+	text-shadow: 2px 2px 2px #999;
+	background-color: #a3298f;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.footer p {
+	padding: 4px;
+}
+
 .logo,
 .menu {
 	text-align: center;
@@ -31,9 +44,22 @@ html {
 	font-size: 40px;
 }
 
+.user_login {
+	border: 1px solid red;
+}
+
 .user_login label {
 	display: inline-block;
 	width: 90px;
 	padding-right: 5px;
 	text-align: right;
+}
+
+#frontpage {
+	text-align: center;
+}
+
+#fpimg1 {
+	height: 200px;
+	box-shadow: 4px 4px 4px #333;
 }
