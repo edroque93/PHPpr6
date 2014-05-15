@@ -4,7 +4,9 @@
 <!-- Administrators can add a new route -->
 
 <?php
+	include "header.php";
+	
+	echo '<p>Hola de vuelta</p>';
 
-echo '<p>Hola de vuelta</p>';
-
+	include "footer.php";
 ?>

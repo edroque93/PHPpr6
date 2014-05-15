@@ -20,6 +20,18 @@
 		
 		return($result->fetch()["id"]);		
 	}
+	
+	function addUser($acc, $passwd, $user, $mail, $type) {
+		global $db;
+		$db->exec("insert into usuarios(identificador, clave, nombre, email, tipo) 
+					values ( 
+						\"$acc\", 
+						\"$passwd\", 
+						\"$user\", 
+						\"$mail\", 
+						$type
+					);");
+	}
 
 
   // devuelve un array

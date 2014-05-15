@@ -4,7 +4,7 @@
 	
 	session_start();
 	
-	$user = $_POST['username'];
+	$user = $_POST['acc'];
 	$pass = md5($_POST['password']);
 	
 	$query = "select * from usuarios where identificador=\"$user\" and clave=\"$pass\"";
