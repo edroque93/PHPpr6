@@ -1,6 +1,4 @@
 <?php
-	$something = "Lorem ipsum... y tal.";
-	
 	/*
 	
 		TO-DO:
@@ -22,27 +20,16 @@
 	*/
 	
 	include "header.php";
-?>
 
-		<!-- Body -->
-
-		<div>
-		
-			
-			<div class="registration">
-			</div>
-			
-			<!-- Frontpage module -->
-			
+	echo '<div>
 			<div id="frontpage">
 				<p>Página web en versión de pruebas. Ya sé que no soy bueno con los colores Calvin.</p>
 				<p>En esta página web podrás encontrar rutas que hacer en la isla de Gran Canaria.</p>
 				<p>¡Te invitamos a que te registres y participes con la comunidad!</p>
 				<img id="fpimg1" src="img/frontpage1.jpg" alt="Imagen portada" />
 			</div>
-		</div>
+		</div>';
 		
-<?php
 	include "footer.php";
 ?>
 		

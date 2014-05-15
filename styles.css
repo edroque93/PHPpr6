@@ -26,6 +26,13 @@ html {
 	text-shadow: 2px 2px 2px #999;
 }
 
+.menu {
+	background-color: #882277;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
 .menu ul li {
 	display: inline-block;
 	width: 200px;
