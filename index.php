@@ -58,6 +58,7 @@
 
 		<div>
 		
+			<!-- Login module and registration module should be merged -->
 			<!-- Login module -->
 			
 			<div class="user_login">
