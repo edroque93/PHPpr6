@@ -9,7 +9,7 @@ create table usuarios
   clave text not null,
   nombre text not null,
   email text not null,
-  tipo int not null
+  tipo int not null,
   constraint login unique (identificador) 
 );
 
