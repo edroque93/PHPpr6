@@ -1,6 +1,4 @@
 <?php
-	// Something...
-	
 	$something = "Lorem ipsum... y tal.";
 	
 	/*
