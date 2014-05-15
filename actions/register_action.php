@@ -7,12 +7,18 @@
 	$db = getDB();
 	
 	session_start();
-	
+
+	$acc = $_POST['acc'];	
 	$user = $_POST['username'];
 	$pass = md5($_POST['password1']);
-	$mail = md5($_POST['mail']);
+	$mail = $_POST['mail'];
 	
-	$db->exec();
+	addUser($acc, $pass, $user, $mail, 1);
+	
+	$query = "select * from usuarios where identificador=\"$acc\"";
+	$result = $db->query($query);
+	
+	$_SESSION['user'] = $result->fetch();
 	
 	header("Location: ../index.php");
 ?>
