@@ -24,35 +24,10 @@
 	include "header.php";
 ?>
 
-
-
 		<!-- Body -->
 
 		<div>
 		
-			<!-- Login module and registration module should be merged -->
-			<!-- Login module -->
-			
-			<div class="user_login">
-				<?php 
-					session_start();
-					
-					if (!isset($_SESSION['user']))
-						echo
-							'<form name="loginform" action="actions/login_action.php" method="post">
-								<fieldset>
-									<legend>Log in</legend>
-									<label for="user">Usuario:</label><input type="text" name="username"><br>
-									<label for="password">Contraseña:</label><input type="password" name="password"><br />
-									<input type="submit" value="Entrar" />
-								</fieldset>
-							</form>';
-					else
-						echo '<p>Bienvenido de nuevo, '.$_SESSION["user"]['identificador'].'.</p>';
-				?>
-			</div>
-			
-			<!-- Register module -->
 			
 			<div class="registration">
 			</div>
