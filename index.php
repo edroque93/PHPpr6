@@ -48,7 +48,7 @@
 								</fieldset>
 							</form>';
 					else
-						echo '<p>Bienvenido de nuevo, '.$_SESSION["username"].'.</p>';
+						echo '<p>Bienvenido de nuevo, '.$_SESSION["user"]['identificador'].'.</p>';
 				?>
 			</div>
 			

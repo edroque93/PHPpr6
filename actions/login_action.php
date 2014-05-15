@@ -12,10 +12,9 @@
 	$result = $db->query($query);
 	
 	if ($_SESSION['user'] = $result->fetch()) {
-		print $_SESSION['user']['id'];
+		header("Location: ../index.php");
 	} else {
-		print "nope.";
+		unset($_SESSION['user']);
+		header('Location: '.$_SERVER['HTTP_REFERER']);
 	}
-
-	header("Location: ../index.php");
 ?>
