@@ -39,7 +39,7 @@
 					
 					if (!isset($_SESSION['user']))
 						echo
-							'<form name="loginform" action="login.php" method="post">
+							'<form name="loginform" action="actions/login_action.php" method="post">
 								<fieldset>
 									<legend>Log in</legend>
 									<label for="user">Usuario:</label><input type="text" name="username"><br>

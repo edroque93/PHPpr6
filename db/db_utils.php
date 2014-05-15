@@ -2,7 +2,8 @@
 
 	function getDB() {
 		try {
-			$db = new PDO("sqlite:./data.base");
+			$path = $_SERVER['DOCUMENT_ROOT'];
+			$db = new PDO("sqlite:$path/db/data.base");
 			return($db);
 		} catch (PDOException $e) {
 			print "<p>Error: ".$e->getMessage()."</p>";

@@ -1,6 +1,6 @@
 <?php
-	include_once "db_utils.php";
-	global $db;
+	include_once "../db/db_utils.php";
+	$db = getDB();
 	
 	session_start();
 	
@@ -17,5 +17,5 @@
 		print "nope.";
 	}
 
-	header("Location: index.php");
+	header("Location: ../index.php");
 ?>
