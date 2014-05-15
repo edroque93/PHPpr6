@@ -65,7 +65,7 @@
 				<?php 
 					session_start();
 					
-					if (!isset($_SESSION['username']))
+					if (!isset($_SESSION['user']))
 						echo
 							'<form name="loginform" action="login.php" method="post">
 								<fieldset>

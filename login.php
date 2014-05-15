@@ -7,7 +7,7 @@
 	$user = $_POST['username'];
 	$pass = md5($_POST['password']);
 	
-	$query = "select * from usuarios where identificador=\"$user\"";
+	$query = "select * from usuarios where identificador=\"$user\" and clave=\"$pass\"";
 	
 	$result = $db->query($query);
 	
@@ -17,5 +17,5 @@
 		print "nope.";
 	}
 
-	//header("Location: index.php");
+	header("Location: index.php");
 ?>
