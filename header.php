@@ -12,7 +12,11 @@
 			<body>
 				<!-- Magic debug link -->
 				
-				<a href="database_create_fill.php" target="_blank">Genera BD</a>
+				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>
+				
+				<!-- Dirty login link -->
+				
+				<a href="login.php">Entrar o registrarse</a>
 				
 				<!-- Header -->
 		
