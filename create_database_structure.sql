@@ -10,6 +10,7 @@ create table usuarios
   nombre text not null,
   email text not null,
   tipo int not null
+  constraint login unique (identificador) 
 );
 
 create table actividades
