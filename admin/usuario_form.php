@@ -40,6 +40,8 @@ else {
 	echo "Undefined Post Option";
 }
 
+echo '<a href="usuarios.php">Volver</a>';
+
 $form = '<form action="usuario_submit.php" method="post">';
 foreach($columns as $col){
 	$data = $user[$col];

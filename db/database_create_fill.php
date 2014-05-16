@@ -62,8 +62,8 @@
 	
 	// Admins
 	
-	addUser("piratecat", md5("madzcat"), "Quique", "piratecat@mad.cat", 0);
-	addUser("cabul", md5("winkwink"), "Calvin", "cabul@mad.net", 0);
+	addUser("piratecat", md5("madzcat"), "Quique", "piratecat@mad.cat", 2);
+	addUser("cabul", md5("winkwink"), "Calvin", "cabul@mad.net", 2);
 	
 	// Users
 	
