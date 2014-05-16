@@ -14,8 +14,9 @@
 				
 				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>';
 				
+		session_start();
+		
 		if (isset($_SESSION['user'])) {
-			session_start();	
 			$name = $_SESSION['user']['nombre'];
 			echo '<p>Hola de nuevo, '.$name.'.</p>';
 			echo '<a href="logout.php">Logout</a>';

@@ -12,7 +12,7 @@
 	foreach($activities["data"] as $row) {
   		echo '
   			<div>
-  				<h1><a href="'.$row[url].'">'.$row[nombre].'</a>';
+  				<h1><a href="'.$row['url'].'">'.$row['nombre'].'</a>';
   		
 		if (isset($_SESSION["user"])) {
 			$print = false;
@@ -32,8 +32,8 @@
   		}
   		
   		echo '</h1>
-  				<h4>'.substr($row[fecha], 0, -7).'</h4>
-  				<p>'.$row[descripcion].'</p>
+  				<h4>'.substr($row['fecha'], 0, -7).'</h4>
+  				<p>'.$row['descripcion'].'</p>
   			</div>';
 	}
 	
