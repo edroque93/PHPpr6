@@ -68,6 +68,11 @@ html {
 	text-align: right;
 }
 
+.join,
+.leave {
+	width: 32px;
+}
+
 #frontpage {
 	text-align: center;
 }
@@ -75,4 +80,9 @@ html {
 #fpimg1 {
 	height: 200px;
 	box-shadow: 4px 4px 4px #333;
+}
+
+.about {
+	text-align: center;
+	text-shadow: 2px 2px 2px #999;
 }

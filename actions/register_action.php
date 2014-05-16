@@ -15,10 +15,11 @@
 	
 	addUser($acc, $pass, $user, $mail, 1);
 	
-	$query = "select * from usuarios where identificador=\"$acc\"";
+	$query = "select * from usuarios where identificador=\"$acc\" and clave=\"$pass\"";
 	$result = $db->query($query);
 	
-	$_SESSION['user'] = $result->fetch();
+	if (!$result)
+		unset($_SESSION['user']);
 	
 	header("Location: ../index.php");
 ?>
