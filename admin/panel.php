@@ -11,7 +11,7 @@ if($err){
 
 function showPanel($select){
   
-	$pages = array("usuarios","actividades","inscripciones");
+	$pages = array("Usuarios","Actividades","Inscripciones");
 
 	echo '<select onchange="location = this.options[this.selectedIndex].value;">';
 	foreach($pages as $page){
