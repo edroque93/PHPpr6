@@ -6,8 +6,9 @@
 	$activities = getTable("actividades");
 	$userplans = getTable("inscripciones");
 	
-	session_start();
-	
+	if(!isset($_SESSION)){
+	    session_start();
+	}
 
 	foreach($activities["data"] as $row) {
   		echo '
