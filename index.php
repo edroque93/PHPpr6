@@ -1,4 +1,8 @@
 <?php
+	/*
+	 * Proyecto en GitHub: https://github.com/edroque93/PHPpr6
+	 */
+
 	include "header.php";
 
 	echo '<div>
