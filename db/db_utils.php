@@ -55,6 +55,12 @@
 						\"$userID\"
 					);");
 	}
+	
+	function delInscription($activityID, $userID) {
+		global $db;
+		$db->exec("delete from inscripciones where 
+					actividad=\"$activityID\" and usuario=\"$userID\";");
+	}
 
 
   // devuelve un array

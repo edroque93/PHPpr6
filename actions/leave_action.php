@@ -10,6 +10,6 @@
 	$usr = $_SESSION['user']['id'];
 	$act = getActivityID($_POST["id"]);
 	
-	addInscription($act, $usr);
+	delInscription($act, $usr);
 	header('Location: '.$_SERVER['HTTP_REFERER']);
 ?>
