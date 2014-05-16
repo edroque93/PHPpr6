@@ -169,7 +169,9 @@ function updateDatabase($post){
 		}
 		$query = substr($query, 0,-1);
 		$query .= "where id=$id";
-		$db->exec($query);
+		if(!$db->exec($query)){
+			return errMsg("La base de datos no se ha podido actualizar");
+		}
 	} else {
 		$query = "insert into usuarios(";
 		foreach ($updates as $upd){
@@ -182,7 +184,9 @@ function updateDatabase($post){
 		}
 		$query = substr($query, 0,-1);
 		$query .= ")";
-		$db->exec($query);
+		if(!$db->exec($query)){
+			return errMsg("La base de datos no se ha podido actualizar");
+		}
 	}
 
 	echo "<p>La base de datos ha sido actualizada</p>";
