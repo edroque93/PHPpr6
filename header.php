@@ -14,10 +14,6 @@
 				
 				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>';
 
-		
-		if(!isset($_SESSION)){		
-			session_start();
-				
 		if(!isset($_SESSION)){
 		    session_start();
 		}
