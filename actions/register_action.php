@@ -20,6 +20,8 @@
 	
 	if (!$result)
 		unset($_SESSION['user']);
+	else
+		$_SESSION['user'] = $result->fetch();
 	
 	header("Location: ../index.php");
 ?>
