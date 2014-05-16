@@ -1,8 +1,3 @@
-<!-- Load every route stored in the db -->
-<!-- Each route has its own participants, which might be shown together with the description -->
-<!-- Each route will have a "join/leave" button -->
-<!-- Administrators can add a new route -->
-
 <?php
 	include "header.php";
 	
@@ -13,17 +8,34 @@
 	
 	echo "<table><tr>";
 
-/*
-	foreach($activities["columns"] as $column) {
-	  echo "<th>$column</th>";
-	}*/
-
 	echo "</tr>";
+	
+	session_start();
+	
 
 	foreach($activities["data"] as $row) {
   		echo '
   			<div>
-  				<h1><a href="'.$row[url].'">'.$row[nombre].'</a></h1>
+  				<h1><a href="'.$row[url].'">'.$row[nombre].'</a>';
+  		
+		if (isset($_SESSION["user"])) {
+			$print = false;
+			
+			foreach($userplans["data"] as $plan) {
+				if ($plan["actividad"] === $row["id"] && $plan["usuario"] === $_SESSION["user"]["id"]) {
+					$print = true;
+					break;
+				}
+			}
+			
+			if ($print) {
+				echo '<img class="joinleave" src="img/leave.png" alt="Leave" />';
+			} else {
+				echo '<img class="joinleave" src="img/join.png" alt="Join" />';
+			}
+  		}
+  		
+  		echo '</h1>
   				<h4>'.substr($row[fecha], 0, -7).'</h4>
   				<p>'.$row[descripcion].'</p>
   			</div>';

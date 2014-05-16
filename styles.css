@@ -68,6 +68,10 @@ html {
 	text-align: right;
 }
 
+.joinleave {
+	width: 32px;
+}
+
 #frontpage {
 	text-align: center;
 }
