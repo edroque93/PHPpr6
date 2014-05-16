@@ -2,19 +2,14 @@
 
 include "../db/db_utils.php";
 
-include "check_session.php";
+include "panel.php";
 
-$err = check_session();
-if($err){
-	echo "<p>$err</p>";
-	echo "<a href=\"../index.php\">Volver</a>";
-	return;
-}
+showPanel("Inscripciones");
 
 if(!$_POST){ // Normal mode
 $inscripciones = getTable("inscripciones");
 
-echo "<h1>Inscripciones</h1>";
+echo "<h2>Inscripciones</h2>";
 echo "<table><tr id=\"columns\">";
 
 foreach($inscripciones["columns"] as $column) {

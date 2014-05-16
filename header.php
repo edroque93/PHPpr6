@@ -29,7 +29,7 @@
 			echo '<p>Hola de nuevo, '.$name.'.</p><br />';
 			
 			if ($_SESSION['user']['tipo'] == 2) {
-				echo '<a class="logged" href="admin/panel.php">Administración</a><br />';			
+				echo '<a class="logged" href="admin/usuarios.php">Administración</a><br />';			
 			}
 			
 			echo '<a class="logged" href="logout.php">Logout</a><br />';
