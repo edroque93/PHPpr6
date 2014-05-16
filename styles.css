@@ -46,6 +46,10 @@ html {
 	line-height: 0.4em;
 }
 
+.route img:hover {
+	cursor: pointer;
+}
+
 .menu {
 	background-color: #882277;
 	-webkit-border-radius: 10px;
@@ -90,7 +94,10 @@ html {
 
 .join,
 .leave {
-	width: 32px;
+	height: 32px;
+	padding-left: 10px;
+	position: relative;
+	top: 5px;
 }
 
 .about p {
