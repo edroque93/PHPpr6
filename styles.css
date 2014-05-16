@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Amaranth);
-@import url(http://fonts.googleapis.com/css?family=Satisfy);
+@import url(http://fonts.googleapis.com/css?family=Norican);
 
 html {
     background: linear-gradient(#882277, #999);
@@ -28,7 +28,7 @@ html {
 .logo {
 	color: #fff;
 	text-shadow: 2px 2px 2px #000;
-	font-family: 'Satisfy', cursive;
+	font-family: 'Norican', cursive;
 }
 
 .menu {
