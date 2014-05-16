@@ -2,6 +2,15 @@
 
 include "../db/db_utils.php";
 
+include "check_session.php";
+
+$err = check_session();
+if($err){
+	echo "<p>$err</p>";
+	echo "<a href=\"../index.php\">Volver</a>";
+	return;
+}
+
 if(!$_POST){ // Normal mode
 $usuarios = getTable("usuarios");
 echo "<h1>Usuarios</h1>";

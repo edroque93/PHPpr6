@@ -77,5 +77,5 @@
     $data = $db->query("select * from $table")->fetchAll();
     return array("columns" => $columns,"data" => $data);
   }
-	
+
 ?>
