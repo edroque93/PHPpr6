@@ -15,7 +15,7 @@ function showPanel($select){
 
 	echo '<select onchange="location = this.options[this.selectedIndex].value;">';
 	foreach($pages as $page){
-		echo "<option value=\"$page.php\" ";
+		echo "<option value=\"".strtolower($page).".php\" ";
 		if($select == $page) echo "selected";
 		echo">$page</option>";
 	}
