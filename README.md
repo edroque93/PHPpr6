@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/edroque93/PHPpr6/master/img/php-logo.png" alt="Drawing" width="200px" align="middle" style="text-align: center;" />
+<img src="https://raw.githubusercontent.com/edroque93/PHPpr6/master/img/php-logo.png" width="200px" align="middle"  />
 
 Práctica 6, PHP
 ======
