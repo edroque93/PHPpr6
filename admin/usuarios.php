@@ -2,6 +2,8 @@
 
 include "../db/db_utils.php";
 
+include "check_session.php";
+
 if(!$_POST){ // Normal mode
 $usuarios = getTable("usuarios");
 echo "<h1>Usuarios</h1>";
