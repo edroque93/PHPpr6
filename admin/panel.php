@@ -11,7 +11,7 @@ if($err){
 
 function showPanel($select){
   
-	$pages = array("Usuarios","Actividades","Inscripciones");
+	$pages = array("usuarios","actividades","inscripciones");
 
 	echo '<select onchange="location = this.options[this.selectedIndex].value;">';
 	foreach($pages as $page){
@@ -20,23 +20,6 @@ function showPanel($select){
 		echo">$page</option>";
 	}
 	echo "</select>";
-}
-
-function echoHeader(){
-echo <<<HEADER
-<!doctype html>
-<html>
-	<head>
-		<title>Admin</title>
-
-HEADER;
-}
-
-
-function echoFooter(){
-echo <<<FOOTER
-
-FOOTER;
 }
 
 ?>

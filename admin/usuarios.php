@@ -6,7 +6,7 @@ include "../db/db_utils.php";
 
 include "panel.php";
 
-showPanel("Usuarios");
+showPanel("usuarios");
 
 if(!$_POST){ // Normal mode
 $usuarios = getTable("usuarios");
