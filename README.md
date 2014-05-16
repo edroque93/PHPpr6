@@ -1,8 +1,14 @@
+![alt text](https://raw.githubusercontent.com/edroque93/PHPpr6/master/img/php-logo.png "Logo")
+
 Práctica 6, PHP
 ======
 
-**Calvin & Enrique**
+**Project developed in a hurry by Calvin & Enrique**
 
-Práctica de PR4 en PHP
-
-- TODO list can be found in index.php
+Content
+------
+- Login block
+- Register block
+- Admin panel
+- Personal route page
+- Beautiful javascript-php tricks
