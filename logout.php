@@ -5,5 +5,5 @@
 		unset($_SESSION['user']);
 	}
 	
-	header('Location: '.$_SERVER['HTTP_REFERER']);
+	header('Location: /index.php');
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+include "../header.php";
+
 include "../db/db_utils.php";
 
 include "panel.php";
@@ -202,5 +204,7 @@ function errMsg($msg){
 	echo "<p>Error: $msg</p>";
 	echo "<a href=\"usuarios.php\">Volver</a>";
 }
+
+include "../footer.php";
 
 ?>

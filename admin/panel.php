@@ -22,4 +22,21 @@ function showPanel($select){
 	echo "</select>";
 }
 
+function echoHeader(){
+echo <<<HEADER
+<!doctype html>
+<html>
+	<head>
+		<title>Admin</title>
+
+HEADER;
+}
+
+
+function echoFooter(){
+echo <<<FOOTER
+
+FOOTER;
+}
+
 ?>
