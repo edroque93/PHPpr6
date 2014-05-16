@@ -1,12 +1,23 @@
 <?php
 
+include "check_session.php";
+
+$err = check_session();
+if($err){
+	echo "<p>$err</p>";
+	echo "<a href=\"../index.php\">Volver</a>";
+	return;
+}
+
 include "../header.php";
 
 include "../db/db_utils.php";
 
 include "panel.php";
 
-showPanel("inscripciones");
+echo '<div id="admin">';
+
+showPanel("Inscripciones");
 
 if(!$_POST){ // Normal mode
 $inscripciones = getTable("inscripciones");
@@ -140,8 +151,6 @@ $js = <<<SCRIPT
 		dels[i].onclick = del_cb;
 	}
 
-	document.body.removeChild(document.getElementById('hack'));
-
 })();
 </script>
 SCRIPT;
@@ -184,6 +193,8 @@ function errMsg($msg){
 	echo "<a href=\"inscripciones.php\">Volver</a>";
 }
 
+
+echo "</div>";
 
 include "../footer.php";
 

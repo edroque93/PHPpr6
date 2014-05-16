@@ -1,12 +1,24 @@
 <?php
 
+include "check_session.php";
+
+$err = check_session();
+if($err){
+	echo "<p>$err</p>";
+	echo "<a href=\"../index.php\">Volver</a>";
+	return;
+}
+
 include "../header.php";
 
 include "../db/db_utils.php";
 
 include "panel.php";
 
-showPanel("actividades");
+echo '<div id="admin">';
+
+showPanel("Actividades");
+
 
 if(!$_POST){ // Normal mode
 $actividades = getTable("actividades");
@@ -69,8 +81,6 @@ $js = <<<SCRIPT
 		rows[i].onclick = callback;
 	}
 
-	document.body.removeChild(document.getElementById('hack'));
-
 })();
 </script>
 SCRIPT;
@@ -116,7 +126,7 @@ DEL_ACT;
 	echo <<<UPD_FORM
 		<form action="actividades.php" method="post">
 			<input type="hidden" name="opt" value="upd"/>
-			<input type="hidden" name="id" value="$id";
+			<input type="hidden" name="id" value="$id"/>
 UPD_FORM;
 	for( $i = 0; $i < 3; $i++ ){
 		$val = ($id)?$act_raw[$columns[$i]]:"";
@@ -185,6 +195,8 @@ function errMsg($msg){
 	echo "<p>Error: $msg</p>";
 	echo "<a href=\"actividades.php\">Volver</a>";
 }
+
+echo "</div>";
 
 include "../footer.php";
 

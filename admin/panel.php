@@ -1,14 +1,5 @@
 <?php
 
-include "check_session.php";
-
-$err = check_session();
-if($err){
-	echo "<p>$err</p>";
-	echo "<a href=\"../index.php\">Volver</a>";
-	return;
-}
-
 function showPanel($select){
   
 	$pages = array("Usuarios","Actividades","Inscripciones");

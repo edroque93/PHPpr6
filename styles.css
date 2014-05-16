@@ -2,22 +2,33 @@
 @import url(http://fonts.googleapis.com/css?family=Norican);
 
 html {
-    background: linear-gradient(#882277, #999);
-    background-attachment: fixed;
-    font-family: arial;
+	background: radial-gradient(#fdfefe,#e4f2f5);
+  background-attachment: fixed;
+  font-family: arial;
+  min-height: 100%;
+  position: relative;
+  color: #040a0b;
+  letter-spacing: 0.7px;
+}
+
+body {
+	margin: 0 0 100px;
 }
 
 .footer	{
 	text-align: center;
-	text-shadow: 2px 2px 2px #999;
-	background-color: #a3298f;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	background-color: #5bb3c3;
+	line-height: 40px;
+	font-size: 20px;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	color: #fdfefe;
 }
 
 .footer p {
-	padding: 4px;
+	margin: 0;
 }
 
 .logo,
@@ -25,21 +36,24 @@ html {
 	text-align: center;
 }
 
+.menu {
+	margin-bottom: 40px;
+}
+
 .logo {
-	color: #fff;
-	text-shadow: 2px 2px 2px #000;
+	color: #5bb3c3;
 	font-family: 'Norican', cursive;
 }
 
 .route {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 60px;
+	padding-right: 60px;
+	text-align: justify;
 }
 
 .route a {
 	text-decoration: none;
-	color: #e492d6;
-	text-shadow: 2px 2px 2px #000;
+	color: #5bb3c3;
 }
 
 .route ul {
@@ -51,13 +65,18 @@ html {
 }
 
 .menu {
-	background-color: #882277;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	background-color: #5bb3c3;
+	line-height: 60px;
+}
+
+.menu ul {
+	padding: 0;
+	margin: 0;
 }
 
 .menu ul li {
+	padding:0;
+	margin: 0;
 	display: inline-block;
 	width: 200px;
 	line-height: 30px;
@@ -65,8 +84,7 @@ html {
 
 .menu ul li a {
 	text-decoration: none;
-	color: #fff;
-	text-shadow: 2px 2px 2px #000;
+	color: #fdfefe;
 	font-size: 30px;
 	vertical-align: middle;
 }
@@ -77,7 +95,7 @@ html {
 
 .loginregister table {
 	margin-left:auto; 
-    margin-right:auto;
+  margin-right:auto;
 	text-align: center;
 }
 
@@ -114,8 +132,8 @@ html {
 }
 
 #fpimg1 {
+	margin-top: 40px;
 	height: 200px;
-	box-shadow: 4px 4px 4px #333;
 }
 
 #gendb {
@@ -135,9 +153,8 @@ html {
 
 .tif {
 	position: absolute;
-	top: 0px;
-	color: white;
-	text-shadow: 2px 2px 2px #000;
+	top: 0;
+	left: 10px;
 }
 
 .register {
@@ -153,11 +170,91 @@ html {
 .register,
 .logged {
 	text-decoration: none;
-	color: #e492d6;
-	text-shadow: 2px 2px 2px #000;
 }
 
 .about {
 	text-align: center;
-	text-shadow: 2px 2px 2px #999;
 }
+
+.del {
+	cursor: pointer;
+	background-color: #5bb3c3;
+	color: #fdfefe;
+}
+
+#admin{
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#admin table,th,td{
+	border: 1px solid #040a0b;
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+#admin th {
+	text-transform: uppercase;
+}
+
+#admin a {
+	text-decoration: none;
+}
+
+#admin label {
+	text-transform: uppercase;
+}
+
+#admin table {
+	cursor: pointer;
+}
+
+#admin select {
+	-webkit-appearance: none;
+	border: 0;
+	border-radius: 0;
+	border: 1px solid #5bb3c3;
+	background-color: #fdfefe;
+	line-height: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 5px;
+	margin: 0;
+}
+
+#admin input[type="submit"]{
+	-webkit-appearance: none;
+	border: 0;
+	border-radius: 0;
+	border: 1px solid #5bb3c3;
+	background-color: #fdfefe;
+	line-height: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 5px;
+	margin: 0;
+	margin-top: 10px;
+}
+
+#admin input{
+	line-height: 20px;
+	font-size: 16px;
+	padding: 5px;
+}
+
+#admin table input[type="submit"] {
+	margin: 0;
+}
+
+#admin textarea {
+	width: 300px;
+	height: 200px;
+}
+
+#admin textarea,
+#admin input{
+	border: 1px solid #5bb3c3;
+}
+
+
+
