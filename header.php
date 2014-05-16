@@ -12,13 +12,18 @@
 			<body>
 				<!-- Magic debug link -->
 				
-				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>
+				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>';
 				
-				<!-- Dirty login link -->
+		session_start();
+		
+		if (isset($_SESSION['user'])) {
+			$name = $_SESSION['user']['nombre'];
+			echo '<p>Hola de nuevo, '.$name.'.</p>';
+		} else
+			echo '	<!-- Dirty login link -->				
+					<a href="login.php">Entrar o registrarse</a>';
 				
-				<a href="login.php">Entrar o registrarse</a>
-				
-				<!-- Header -->
+		echo '	<!-- Header -->
 		
 				<div>
 					<div class="logo">
