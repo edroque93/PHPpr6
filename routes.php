@@ -33,7 +33,7 @@
   		}
   		
   		echo '</h1>
-  				<h4>'.substr($row['fecha'], 0, -7).'</h4>
+  				<h4>'.$row['fecha'].'</h4>
   				<p>'.$row['descripcion'].'</p>
   			</div>';
 	}

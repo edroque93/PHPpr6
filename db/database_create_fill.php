@@ -75,9 +75,52 @@
 	
 	// Actividades
 	
-	addActivity("2014-04-02 10:35:00.000", "Roque Nublo", "Paseo por la cumbre...", "roquenublo.html");
-	addActivity("2014-04-12 16:00:00.000", "Bandama", "Paseo por bandama...", "bandama.html");
-	addActivity("2014-04-09 07:30:00.000", "Aldea", "Caminata por la aldea...", "aldea.html");
+	addActivity("2014-04-02 10:35", "Roque Nublo",
+				"Es uno de los Monumentos Naturales más representativos del Archipiélago y el 
+				símbolo indiscutible de la isla de Gran Canaria y de sus habitantes. Los 
+				excepcionales valores naturales de este monolito de origen erosivo y del 
+				espacio natural que le rodea hacen de estos lugares centro de  visita obligada 
+				para caminantes  y amantes de la naturaleza que en la pequeña red de senderos 
+				que recorre este paraje singular encuentran otro motivo de intenso disfrute.", 
+				"http://www.senderosdegrancanaria.com/6.html");
+				
+	addActivity("2014-04-12 16:00", "Bandama", 
+				"Se trata de una caldera de explosión de más de 220 metros de profundidad. El 
+				diámetro del borde superior de sus abruptas paredes de rocas fonolíticas, 
+				coronadas por aglomerados Roque Nublo, es de unos 1.000 metros y su perímetro 
+				supera los 3 kilómetros. El conjunto del Pico (574 msnm) y Caldera de Bandama 
+				constituyen un muestrario de enorme valor científico. El Gobierno de Canarias 
+				lo catalogó dentro de la extensa Red de Espacios Naturales Protegidos, otorgándole 
+				la categoría de Monumento Natural. A su vez, el Instituto Tecnológico Geominero 
+				de España lo declaró como punto de interés geológico.", 
+				"http://www.medianias.org/senderos/es/santa_brigida_34.htm");
+				
+	addActivity("2014-04-09 07:30", "Aldea", 
+				"La Meca para cualquier senderista en Gran Canaria, es conocer la Playa de Güigüi, 
+				dentro del Macizo del mismo nombre, la ruta más conocida para llegar a la playa es 
+				la de Tasartico, no obstante desde La Aldea, existen dos posibilidades para llegar 
+				a la playa una vez pasada la Degollada de Güigüi Chico; la ruta larga, por la 
+				Medialuna y la corta, la más habitual por el sendero de Güigüi Chico.", 
+				"http://www.infonortedigital.com/portada/component/content/article/8468-la-aldea-medialuna-la-alddea");
+				
+	addActivity("2015-01-05 10:30", "Dunas de Maspalomas",
+				"Con este nombre se conoce al principal núcleo turístico de la isla y a la famosa 
+				playa que  constituye su mayor reclamo internacional, pero Maspalomas es también 
+				uno de los espacios naturales más representativos del Archipiélago, declarado 
+				Reserva Natural Especial y Lugar de Interés Comunitario (LIC) de la Red Natura 
+				2000 europea. por su  excepcional valor científico y singular belleza.",
+				"http://www.senderosdegrancanaria.com/8.html");
+	
+	addActivity("2014-09-13 08:30", "Pinar de Tamadaba",
+				"El  antiquísimo macizo montañoso de Tamadaba-Altavista  situado en el noroeste de 
+				la isla es sin duda uno de sus espacios naturales de mayor riqueza biológica y 
+				paisajística que le han valido su declaración de Parque Natural, cuyo conocimiento 
+				y disfrute justifican plenamente su visita a pesar de su  relativa lejanía de la 
+				capital insular. Mientras que sus laderas noroccidentales son escarpadas, en gran 
+				parte acantilados que se alzan a más de 1000 metros sobre el mar, su zona superior 
+				se caracteriza por suaves lomas y llanos cubiertos de uno de los pinares naturales 
+				más antiguos de Canarias.",
+				"http://www.senderosdegrancanaria.com/9.html");
 	
 	// Inscripciones
 	
