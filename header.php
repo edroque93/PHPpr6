@@ -13,8 +13,10 @@
 				<!-- Magic debug link -->
 				
 				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>';
-				
-		session_start();
+		
+		if(!isset($_SESSION)){		
+			session_start();
+		}
 		
 		if (isset($_SESSION['user'])) {
 			$name = $_SESSION['user']['nombre'];
