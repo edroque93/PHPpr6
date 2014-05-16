@@ -31,6 +31,15 @@ html {
 	font-family: 'Norican', cursive;
 }
 
+.route {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.route ul {
+	line-height: 0.4em;
+}
+
 .menu {
 	background-color: #882277;
 	-webkit-border-radius: 10px;
