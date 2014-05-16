@@ -68,7 +68,8 @@ html {
 	text-align: right;
 }
 
-.joinleave {
+.join,
+.leave {
 	width: 32px;
 }
 

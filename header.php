@@ -19,6 +19,7 @@
 		if (isset($_SESSION['user'])) {
 			$name = $_SESSION['user']['nombre'];
 			echo '<p>Hola de nuevo, '.$name.'.</p>';
+			echo '<a href="logout.php">Logout</a>';
 		} else
 			echo '	<!-- Dirty login link -->				
 					<a href="login.php">Entrar o registrarse</a>';
