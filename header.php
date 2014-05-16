@@ -10,23 +10,36 @@
 				<title>Práctica 6 - PHP</title>
 			</head>
 			<body>
-				<!-- Magic debug link -->
+				<!-- Magic debug link 
 				
-				<a href="db/database_create_fill.php" target="_blank">Genera BD</a>';
+
+				<a id="gendb" href="db/database_create_fill.php" target="_blank">Genera BD</a>
+				
+				-->';
+
 
 		if(!isset($_SESSION)){
 		    session_start();
 		}
 		
+		echo '<div class="tif">';
+		
 		if (isset($_SESSION['user'])) {
 			$name = $_SESSION['user']['nombre'];
-			echo '<p>Hola de nuevo, '.$name.'.</p>';
-			echo '<a href="logout.php">Logout</a>';
+			echo '<p>Hola de nuevo, '.$name.'.</p><br />';
+			
+			if ($_SESSION['user']['tipo'] == 2) {
+				echo '<a class="logged" href="admin/panel.php">Administración</a><br />';			
+			}
+			
+			echo '<a class="logged" href="logout.php">Logout</a><br />';
 		} else
 			echo '	<!-- Dirty login link -->				
-					<a href="login.php">Entrar o registrarse</a>';
+					<a class="register" id="" href="login.php">Entrar o registrarse</a>';
 				
-		echo '	<!-- Header -->
+		echo '	</div>
+		
+				<!-- Header -->
 		
 				<div>
 					<div class="logo">

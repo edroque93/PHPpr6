@@ -11,11 +11,10 @@
 	}
 
 	foreach($activities["data"] as $row) {
-  		echo '
-  			<div>
-  				<h1><a href="'.$row['url'].'">'.$row['nombre'].'</a>';
+  		echo '<div class="route">
+				<h1><a href="'.$row['url'].'" target="_blank">'.$row['nombre'].'</a>';
   		
-		if (isset($_SESSION["user"])) {
+		if (isset($_SESSION["user"])) { // Only registered users
 			$print = false;
 			
 			foreach($userplans["data"] as $plan) {
@@ -32,10 +31,30 @@
 			}
   		}
   		
-  		echo '</h1>
-  				<h4>'.substr($row['fecha'], 0, -7).'</h4>
-  				<p>'.$row['descripcion'].'</p>
-  			</div>';
+  		echo '</h1><h4>'.$row['fecha'].'</h4><p>'.$row['descripcion'].'</p>';
+  				
+  		if (isset($_SESSION["user"])) { // Only registered users
+	  		echo '<h4>Inscritos:</h4><ul>';
+  				
+  			$someone = false;
+  				
+	  		foreach($userplans["data"] as $plan) {
+				if ($plan["actividad"] === $row["id"]) {
+					echo '<li><p>';
+					echo getUserNameByID($plan["usuario"]);
+					echo '</p></li>';
+					$someone = true;
+				}
+			}
+		
+			if (!$someone) {
+				echo '<li><p>Este podría ser tu nombre, ¡apúntate ya!</p></li>';		
+			}
+  				
+	  		echo '</ul>';
+  		}
+  		
+  		echo '</div>';
 	}
 	
 	
@@ -86,5 +105,5 @@
 	</script>
 SCRIPT;
 
-echo $js;
+	echo $js;
 ?>

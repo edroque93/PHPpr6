@@ -40,6 +40,13 @@
 		return($result->fetch()["id"]);
 	}
 	
+	function getUserNameByID($id) {
+		global $db;
+		$result = $db->query("select nombre from usuarios where id=\"$id\"");
+		
+		return($result->fetch()["nombre"]);
+	}
+	
 	function getActivityID($name) {
 		global $db;
 		$result = $db->query("select id from actividades where nombre=\"$name\"");

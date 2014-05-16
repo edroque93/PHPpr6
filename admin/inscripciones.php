@@ -34,55 +34,113 @@ function getName($db,$table,$id){
 $db = getDB();
 
 foreach($inscripciones["data"] as $row) {
-	$actividad = $row['actividad'];
-	$usuario = $row['usuario'];
-  $id = "$actividad-$usuario";
-  echo "<tr id=\"$id\">";
-  $actividad = getName($db,"actividades",$actividad);
-  $usuario = getName($db,"usuarios",$usuario);
-  echo "<td>$actividad</td><td>$usuario</td>";
+	$act_id = $row['actividad'];
+	$usr_id = $row['usuario'];
+	$actividad = getName($db,"actividades",$act_id);
+  $usuario = getName($db,"usuarios",$usr_id);
+  echo "<tr>";
+  echo "<td class=\"act\" id=\"act-$act_id\">$actividad</td>
+  <td class=\"usr\" id=\"usr-$usr_id\">$usuario</td>
+  <td class=\"del\" id=\"del-$act_id-$usr_id\">Borrar</td>";
   echo "</tr>";
 }
 
+echo "<tr>";
+
+$all_acts = $db->query("select id,nombre from actividades")->fetchAll();
+$all_usrs = $db->query("select id,nombre from usuarios")->fetchAll();
+
+echo '<td><select name="actividad" form="create">';
+foreach($all_acts as $act){
+	$id = $act["id"];
+	$actividad = $act["nombre"];
+	echo "<option value=$id>$actividad</option>";
+}
+echo "</select></td>";
+echo '<td><select name="usuario" form="create">';
+foreach($all_usrs as $usr){
+	$id = $usr["id"];
+	$usuario = $usr["nombre"];
+	echo "<option value=$id>$usuario</option>";
+}
+echo "</select></td>";
+echo '<td><input type="submit" value="Crear" form="create"/></td>';
+echo "</tr>";
 echo "</table>";
 
-echo <<<NEW_ACT
+echo '<form action="inscripciones.php" method="post" id="create">
+		    <input type="hidden" name="opt" value="add"/></form>';
 
-<form action="inscripciones.php" method="post">
-	<input type="submit" value="Nueva Actividad"/>
-	<input type="hidden" name="opt" value="add"/>
-</form>
-
-NEW_ACT;
 
 $js = <<<SCRIPT
 <script id="hack">
 (function(){
-	var rows = document.querySelectorAll('tr');
 
-	var callback = function(ev){
+	function create_callback(path){
+		return function(ev){
+			var form = document.createElement('form')
+		  	, method = 'post'
+		  	, hiddenId = document.createElement('input')
+		  	, hiddenOpt = document.createElement('input')
+		  	, id = ev.target.id.split("-")[1];
+
+			form.setAttribute('method',method);
+			form.setAttribute('action',path);
+			hiddenId.setAttribute('type','hidden');
+			hiddenId.setAttribute('name','id');
+			hiddenId.setAttribute('value', id);
+			hiddenOpt.setAttribute('type','hidden');
+			hiddenOpt.setAttribute('name','opt');
+			hiddenOpt.setAttribute('value','mod');
+			form.appendChild(hiddenId);
+			form.appendChild(hiddenOpt);
+			document.body.appendChild(form);
+			form.submit();
+		}	
+	}
+
+	var act_cb = create_callback('actividades.php')
+	var usr_cb = create_callback('usuarios.php');
+	var del_cb = function(ev){
 		var form = document.createElement('form')
 		  , method = 'post'
-		  , path = 'actividades.php'
-		  , hiddenId = document.createElement('input')
-		  , hiddenOpt = document.createElement('input');
+		  , action = 'inscripciones.php'
+		  , hiddenAct = document.createElement('input')
+		  , hiddenUsr = document.createElement('input')
+		  , hiddenOpt = document.createElement('input')
+		  , id = ev.target.id.split("-");
 
 		form.setAttribute('method',method);
-		form.setAttribute('action',path);
-		hiddenId.setAttribute('type','hidden');
-		hiddenId.setAttribute('name','id');
-		hiddenId.setAttribute('value', ev.target.parentElement.id);
+		form.setAttribute('action',action);
+		hiddenAct.setAttribute('type','hidden');
+		hiddenAct.setAttribute('name','actividad');
+		hiddenAct.setAttribute('value',id[1]);
+		hiddenUsr.setAttribute('type','hidden');
+		hiddenUsr.setAttribute('name','usuario')
+		hiddenUsr.setAttribute('value',id[2]);;
 		hiddenOpt.setAttribute('type','hidden');
 		hiddenOpt.setAttribute('name','opt');
-		hiddenOpt.setAttribute('value','mod');
-		form.appendChild(hiddenId);
+		hiddenOpt.setAttribute('value','del');
+		form.appendChild(hiddenAct);
+		form.appendChild(hiddenUsr);
 		form.appendChild(hiddenOpt);
 		document.body.appendChild(form);
 		form.submit();
 	}
 
-	for( var i = 1; i < rows.length; i++ ){
-		rows[i].onclick = callback;
+	var acts = document.getElementsByClassName('act');
+	for( var i = 0; i < acts.length; i++ ){
+		acts[i].onclick = act_cb;
+	}
+
+	var usrs = document.getElementsByClassName('usr');
+	for( var i = 0; i < usrs.length; i++ ){
+		usrs[i].onclick = usr_cb;
+	}
+
+	var dels = document.getElementsByClassName('del');
+	for( var i = 0; i < dels.length; i++ ){
+		dels[i].onclick = del_cb;
 	}
 
 	document.body.removeChild(document.getElementById('hack'));
@@ -98,106 +156,35 @@ echo $js;
 $opt = $_POST['opt'];
 
 switch($opt){
-	case "mod":
-		buildForm($_POST['id']);
+	case "del":
+		deleteElem($_POST['actividad'],$_POST['usuario']);
 		break;
 	case "add":
-		buildForm("");
-		break;
-	case "del":
-		deleteElem($_POST['id']);
-		break;
-	case "upd":
-		updateDatabase($_POST);
+		addElem($_POST['actividad'],$_POST['usuario']);
 		break;
 }
 
 }
 
-function buildForm($id){
-	$h = ($id)?"Modificar":"Crear Nueva";
-	echo "<h1>$h Actividad $id</h1>";
-	if($id){
-		$db = getDB();
-		$id = splite("-",$id);
-		$actividad = $id[0];
-		$usuario = $id[1];
-		$inscr_raw = $db->query("select * from inscripciones where actividad=$actividad and usuario=$usuario")->fetch();
-		echo <<<DEL_INSCR
-			<form action="inscripciones.php" method="post">
-				<input type="submit" value="Borrar Actividad"/>
-				<input type="hidden" name="opt" value="del"/>
-				<input type="hidden" name="id" value="$id"/>
-			</form>
-DEL_INSCR;
-	}
-	$actividades = $db->query("select id,nombre from actividades");
-	$usuarios = $db->query("select id,nombre from usuarios");
-	$columns = array("fecha","nombre","url","descripcion");
-	echo <<<UPD_FORM
-		<form action="actividades.php" method="post">
-			<input type="hidden" name="opt" value="upd"/>
-			<input type="hidden" name="id" value="$id";
-UPD_FORM;
-		
-	
-	echo '<input type="submit" value="Confirmar"/><br/>';
-	echo '</form>';
-
+function deleteElem($actividad,$usuario){
+	$db = getDB();
+	$db->query("delete from inscripciones where actividad=$actividad and usuario=$usuario");
+	echo "<p>Inscripcion borrada</p>";
 	echo "<a href=\"inscripciones.php\">Volver</a>";
 }
 
-function deleteElem($id){
+function addElem($actividad,$usuario){
 	$db = getDB();
-	$db->query("delete from actividades where id=$id");
-	echo "<p>Actividad borrada</p>";
-	echo "<a href=\"actividades.php\">Volver</a>";
-}
-
-function updateDatabase($post){
-	$db = getDB();
-	$updates = array("fecha","nombre","descripcion","url");
-	foreach($updates as $upd){
-		if(!$post[$upd]){
-			return errMsg("$upd sin especificar");
-		}
+	if(!$db->exec("insert into inscripciones(actividad,usuario) values($actividad,$usuario)")){
+		return errMsg("La base de datos no se ha podido actualizar</p><p>Probablemente ya existe la inscripcion");
 	}
-	if($post["id"]){
-		$id = $post["id"];
-		$query="update actividades set";
-		foreach($updates as $upd){
-			$query .= " $upd=\"$post[$upd]\",";
-		}
-		$query = substr($query, 0,-1);
-		$query .= "where id=$id";
-		if(!$db->exec($query)){
-			return errMsg("La base de datos no se ha podido actualizar");
-		}
-	} else {
-		$query = "insert into actividades(";
-		foreach ($updates as $upd){
-			$query .= "$upd,";
-		}
-		$query = substr($query, 0,-1);
-		$query .= ") values( ";
-		foreach ($updates as $upd){
-			$query .= "\"$post[$upd]\",";
-		}
-		$query = substr($query, 0,-1);
-		$query .= ")";
-		if(!$db->exec($query)){
-			return errMsg("La base de datos no se ha podido actualizar");
-		}
-	}
-
 	echo "<p>La base de datos ha sido actualizada</p>";
-	echo "<a href=\"actividades.php\">Volver</a>";
-
+	echo "<a href=\"inscripciones.php\">Volver</a>";
 }
 
 function errMsg($msg){
 	echo "<p>Error: $msg</p>";
-	echo "<a href=\"actividades.php\">Volver</a>";
+	echo "<a href=\"inscripciones.php\">Volver</a>";
 }
 
 ?>
