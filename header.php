@@ -52,7 +52,7 @@
 						<ul>
 							<li><a href="/index.php">Inicio</a></li>
 							<li><a href="/routes.php">Rutas</a></li>
-							<li><a href="/about.php">About</a></li>
+							<li><a href="/about.php">Acerca de</a></li>
 						</ul>
 					</div>
 				</div>';

@@ -184,13 +184,15 @@ body {
 
 #admin{
 	margin: 0 auto;
-	padding: 20px;
+	padding: 50px;
 }
 
 #admin table,th,td{
-	border: 1px solid #040a0b;
+	border: 1px solid #5bb3c3;
 	border-collapse: collapse;
 	padding: 10px;
+	background-color: #fdfefe;
+
 }
 
 #admin th {
@@ -240,6 +242,7 @@ body {
 	line-height: 20px;
 	font-size: 16px;
 	padding: 5px;
+	background-color: #fdfefe;
 }
 
 #admin table input[type="submit"] {
@@ -247,13 +250,26 @@ body {
 }
 
 #admin textarea {
+	line-height: 20px;
+	font-size: 16px;
 	width: 300px;
 	height: 200px;
+}
+
+#admin label {
+	line-height: 40px;	
 }
 
 #admin textarea,
 #admin input{
 	border: 1px solid #5bb3c3;
+}
+
+#admin a {
+	line-height: 50px;
+	border: 1px solid #5bb3c3;
+	padding: 5px;
+	background-color: #fdfefe;
 }
 
 
