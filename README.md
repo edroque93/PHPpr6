@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/edroque93/PHPpr6/master/img/php-logo.png =100x20)
+![](https://raw.githubusercontent.com/edroque93/PHPpr6/master/img/php-logo.png =100x)
 
 Práctica 6, PHP
 ======
