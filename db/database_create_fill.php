@@ -128,9 +128,9 @@
 	addInscription(getActivityID("Roque Nublo"), getUserID("Paco"));
 	addInscription(getActivityID("Roque Nublo"), getUserID("José"));
 	addInscription(getActivityID("Roque Nublo"), getUserID("Calvin"));
-	addInscription(getActivityID("Aldea"), getUserID("Quique"));
-	addInscription(getActivityID("Aldea"), getUserID("Calvin"));
-	addInscription(getActivityID("Bandama"), getUserID("Federico"));
+	addInscription(getActivityID("Bandama"), getUserID("Quique"));
+	addInscription(getActivityID("Bandama"), getUserID("Calvin"));
+	addInscription(getActivityID("Aldea"), getUserID("Federico"));
 	
 	print "<p>Script completed</p>";
 ?>

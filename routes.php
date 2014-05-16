@@ -13,7 +13,7 @@
 	foreach($activities["data"] as $row) {
   		echo '
   			<div>
-  				<h1><a href="'.$row['url'].'">'.$row['nombre'].'</a>';
+  				<h1><a href="'.$row['url'].'" target="_blank">'.$row['nombre'].'</a>';
   		
 		if (isset($_SESSION["user"])) {
 			$print = false;
@@ -35,6 +35,18 @@
   		echo '</h1>
   				<h4>'.$row['fecha'].'</h4>
   				<p>'.$row['descripcion'].'</p>
+  				<h4>Inscritos:</h4>
+  				<ul>';
+  				
+  		foreach($userplans["data"] as $plan) {
+				if ($plan["actividad"] === $row["id"]) {
+					echo '<li><p>';
+					echo getUserNameByID($plan["usuario"]);
+					echo '</p></li>';
+				}
+			}
+  				
+  		echo '	</ul>
   			</div>';
 	}
 	
@@ -86,5 +98,5 @@
 	</script>
 SCRIPT;
 
-echo $js;
+	echo $js;
 ?>
