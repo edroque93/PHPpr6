@@ -32,6 +32,29 @@
 						$type
 					);");
 	}
+	
+	function getUserID($name) {
+		global $db;
+		$result = $db->query("select id from usuarios where nombre=\"$name\"");
+		
+		return($result->fetch()["id"]);
+	}
+	
+	function getActivityID($name) {
+		global $db;
+		$result = $db->query("select id from actividades where nombre=\"$name\"");
+		
+		return($result->fetch()["id"]);
+	}
+	
+	function addInscription($activityID, $userID) {
+		global $db;
+		$db->exec("insert into inscripciones(actividad, usuario) 
+					values ( 
+						\"$activityID\", 
+						\"$userID\"
+					);");
+	}
 
 
   // devuelve un array
