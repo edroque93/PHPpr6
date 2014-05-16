@@ -81,3 +81,8 @@ html {
 	height: 200px;
 	box-shadow: 4px 4px 4px #333;
 }
+
+.about {
+	text-align: center;
+	text-shadow: 2px 2px 2px #999;
+}
