@@ -6,10 +6,6 @@
 	$activities = getTable("actividades");
 	$userplans = getTable("inscripciones");
 	
-	echo "<table><tr>";
-
-	echo "</tr>";
-	
 	session_start();
 	
 
@@ -29,9 +25,9 @@
 			}
 			
 			if ($print) {
-				echo '<img class="joinleave" src="img/leave.png" alt="Leave" />';
+				echo '<img class="leave" src="img/leave.png" alt="Leave" />';
 			} else {
-				echo '<img class="joinleave" src="img/join.png" alt="Join" />';
+				echo '<img class="join" src="img/join.png" alt="Join" />';
 			}
   		}
   		
@@ -41,7 +37,53 @@
   			</div>';
 	}
 	
-	echo "</table>";
 	
 	include "footer.php";
+	
+	$js = <<<SCRIPT
+	<script>
+	(function(){
+		var join = function(){
+			var form = document.createElement('form')
+			  , method = 'post'
+			  , path = '/actions/join_action.php'
+			  , hiddenId = document.createElement('input');
+
+			form.setAttribute('method',method);
+			form.setAttribute('action',path);
+			hiddenId.setAttribute('type','hidden');
+			hiddenId.setAttribute('name','id');
+			hiddenId.setAttribute('value', this.previousSibling.innerHTML);
+			form.appendChild(hiddenId);
+			document.body.appendChild(form);
+			form.submit();
+		}
+		
+		var leave = function(){
+			var form = document.createElement('form')
+			  , method = 'post'
+			  , path = '/actions/leave_action.php'
+			  , hiddenId = document.createElement('input');
+
+			form.setAttribute('method',method);
+			form.setAttribute('action',path);
+			hiddenId.setAttribute('type','hidden');
+			hiddenId.setAttribute('name','id');
+			hiddenId.setAttribute('value', this.previousSibling.innerHTML);
+			form.appendChild(hiddenId);
+			document.body.appendChild(form);
+			form.submit();
+		}
+		
+		var elements = document.getElementsByClassName("join");
+		for (var i=0; i<elements.length; i++)
+			elements[i].onclick = join;
+		var elements = document.getElementsByClassName("leave");
+		for (var i=0; i<elements.length; i++)
+			elements[i].onclick = leave;
+	})();
+	</script>
+SCRIPT;
+
+echo $js;
 ?>
